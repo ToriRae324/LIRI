@@ -85,6 +85,7 @@ function myTweets() {
 
             console.log("\n~~~~~~~~~~~~~~~~~~~~~");
             console.log("\nTweets: \n");
+            
             tweets.forEach(function (tweet) {
 
                 console.log("Tweet: " + tweet.text);
