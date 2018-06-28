@@ -1,7 +1,7 @@
 # LIRI
  LIRI is a command line node app that takes in specific parameters from the command line and gives you back data in the terminal/bash window.
 
- ### LIRI accepts these commands:
+### LIRI accepts these commands:
 * `my-tweets`
 
 * `spotify-this-song`
@@ -31,7 +31,7 @@
    * If no song is provided then your program will default to "The Sign" by Ace of Base.
    
 
-3. `node liri.js movie-this <movie name here>'\`
+3. `node liri.js movie-this <movie name here>`
 
    * This will output the following information:
 
