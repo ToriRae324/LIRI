@@ -86,7 +86,9 @@ function myTweets() {
             console.log("\n~~~~~~~~~~~~~~~~~~~~~");
             console.log("\nTweets: \n");
             tweets.forEach(function (tweet) {
-                console.log("Tweet: " + tweet.text + "\n");
+
+                console.log("Tweet: " + tweet.text);
+                console.log("Created at: " + tweet.created_at + "\n");
             });
             console.log("~~~~~~~~~~~~~~~~~~~~~");
 
@@ -105,18 +107,16 @@ function spotifySong(value) {
             .request('https://api.spotify.com/v1/tracks/0hrBpAOgrt8RXigk83LLNE')
             .then(function (data) {
 
-                // console.log(JSON.stringify(data, null, 2));
-
 
                 console.log("\n~~~~~~~~~~~~~~~~~~~~~\n");
                 // Artist(s)
-                console.log("Artist(s): " + JSON.stringify(data.album.artists[0].name));
+                console.log("Artist(s): " + data.album.artists[0].name);
                 // The song's name
-                console.log("Song Title: " + JSON.stringify(data.name));
+                console.log("Song Title: " + data.name);
                 // A preview link of the song from Spotify
-                console.log("Preview Link: " + JSON.stringify(data.preview_url));
+                console.log("Preview Link: " + data.preview_url);
                 // The album that the song is from
-                console.log("Album: " + JSON.stringify(data.album.name));
+                console.log("Album: " + data.album.name);
                 console.log("\n~~~~~~~~~~~~~~~~~~~~~\n");
             })
 
@@ -137,17 +137,15 @@ function spotifySong(value) {
 
             newData.forEach(function (newData) {
 
-
-
                 console.log("\n*");
                 // Artist(s)
-                console.log("Artist(s): " + JSON.stringify(newData.album.artists[0].name));
+                console.log("Artist(s): " + newData.album.artists[0].name);
                 // The song's name
-                console.log("Song Title: " + JSON.stringify(newData.name));
+                console.log("Song Title: " + newData.name);
                 // A preview link of the song from Spotify
-                console.log("Preview Link: " + JSON.stringify(newData.preview_url));
+                console.log("Preview Link: " + newData.preview_url);
                 // The album that the song is from
-                console.log("Album: " + JSON.stringify(newData.album.name));
+                console.log("Album: " + newData.album.name);
                 console.log("*\n");
             });
             console.log("~~~~~~~~~~~~~~~~~~~~~\n");
@@ -170,28 +168,28 @@ function movieThis() {
                 console.log("\n~~~~~~~~~~~~~~~~~~~~~");
                 console.log("\n" + '"Mr. Nobody"' + " Movie: \n");
 
-                console.log(body.Title);
+                var info = JSON.parse(body);
 
 
-                // // * Title of the movie.
-                // console.log("Title: " + JSON.parse(body.Title));
-                // // * Year the movie came out.
-                // console.log("Year: " + JSON.parse(body.Year));
-                // // * IMDB Rating of the movie.
-                // console.log("IMDB Rating: " + JSON.parse(body.imdbRating));
-                // // * Rotten Tomatoes Rating of the movie.
-                // console.log("Rotten Tomatoes Rating: " + JSON.parse(body.Ratings[1].Value));
-                // // * Country where the movie was produced.
-                // console.log("Country: " + JSON.parse(body.Country));
-                // // * Language of the movie.
-                // console.log("Language: " + JSON.parse(body.Language));
-                // // * Short Plot of the movie.
-                // console.log("Plot: " + JSON.parse(body.Plot));
-                // // * Actors in the movie.
-                // console.log("Actors: " + JSON.parse(body.Actors));
+                // * Title of the movie.
+                console.log("Title: " + info.Title);
+                // * Year the movie came out.
+                console.log("Year: " + info.Year);
+                // * IMDB Rating of the movie.
+                console.log("IMDB Rating: " + info.imdbRating);
+                // * Rotten Tomatoes Rating of the movie.
+                console.log("Rotten Tomatoes Rating: " + info.Ratings[1].Value);
+                // * Country where the movie was produced.
+                console.log("Country: " + info.Country);
+                // * Language of the movie.
+                console.log("Language: " + info.Language);
+                // * Short Plot of the movie.
+                console.log("Plot: " + info.Plot);
+                // * Actors in the movie.
+                console.log("Actors: " + info.Actors);
 
 
-                console.log("~~~~~~~~~~~~~~~~~~~~~\n");
+                console.log("\n~~~~~~~~~~~~~~~~~~~~~\n");
 
             }
         });
@@ -205,23 +203,26 @@ function movieThis() {
 
                 console.log("\n~~~~~~~~~~~~~~~~~~~~~");
                 console.log("\n" + '"' + value + '"' + " Movie: \n");
+
+                var info = JSON.parse(body);
+
                 // * Title of the movie.
-                console.log("Title: " + JSON.parse(body.Title));
+                console.log("Title: " + info.Title);
                 // * Year the movie came out.
-                console.log("Year: " + JSON.parse(body.Year));
+                console.log("Year: " + info.Year);
                 // * IMDB Rating of the movie.
-                console.log("IMDB Rating: " + JSON.parse(body.imdbRating));
+                console.log("IMDB Rating: " + info.imdbRating);
                 // * Rotten Tomatoes Rating of the movie.
-                console.log("Rotten Tomatoes Rating: " + JSON.parse(body.Ratings[1].Value));
+                console.log("Rotten Tomatoes Rating: " + info.Ratings[1].Value);
                 // * Country where the movie was produced.
-                console.log("Country: " + JSON.parse(body.Country));
+                console.log("Country: " + info.Country);
                 // * Language of the movie.
-                console.log("Language: " + JSON.parse(body.Language));
+                console.log("Language: " + info.Language);
                 // * Short Plot of the movie.
-                console.log("Plot: " + JSON.parse(body.Plot));
+                console.log("Plot: " + info.Plot);
                 // * Actors in the movie.
-                console.log("Actors: " + JSON.parse(body.Actors));
-                console.log("~~~~~~~~~~~~~~~~~~~~~\n");
+                console.log("Actors: " + info.Actors);
+                console.log("\n~~~~~~~~~~~~~~~~~~~~~\n");
             }
         });
 
